@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martin McNamee A3 - Flights</title>
+    <script src="JSA3.js"></script>
     <style>
         body {
             font-family: sans-serif;
@@ -32,11 +33,22 @@
             margin-top: 15px;
             margin-bottom: 15px;
         }
+
+        .header {
+            background-color: darkblue;
+            border: solid thin white;
+            color: aliceblue;
+        }
+        th {
+            padding: 10px;
+        }
         
     </style>
 </head>
 <body>
-    <div id="table">this is a table</div>
+    <h1 id="flightCount"></h1>
+
+    <div id="TableContainer"></div>
 
     <div id="inputPanel">
         <button id="btnShowFlights">Show All Flights</button>
