@@ -49,13 +49,47 @@ function BuildTable()
 
     for (let i = 0; i < allFlights.length; i++) 
     {
+        let dest = allFlights[i].destination.code + " (" + allFlights[i].destination.city
+         + allFlights[i].destination.country + ") " + "Region = " + 
+         allFlights[i].destination.region;
+
+        let pilot = allFlights[i].pilot;
+        let pilotInfo = "";
+        if(pilot)
+        {
+            pilotInfo = allFlights[i].pilot.firstName + " " + allFlights[i].pilot.lastName;
+
+            let pilotNick = allFlights[i].pilot.nickName;
+
+            if(pilotNick)
+            {
+                pilotInfo += " (" + pilotNick + ")";
+            }
+
+        }
+        else
+        {
+            pilotInfo = "Not yet assigned";
+        }
+
+        let coPilot = allFlights[i].copilot;
+        let coInfo ="";
+        if(coPilot)
+        {
+            coInfo = allFlights[i].copilot.firstName + " " + allFlights[i].copilot.lastName;
+        }
+        else
+        {
+            coInfo = "Not yet assigned"
+        }
+
         tblStr += "<tr>";
         tblStr += "<td>" + allFlights[i].flightNumber + "</td>";
         tblStr += "<td>" + allFlights[i].dayOfWeek + "</td>";
         tblStr += "<td>" + allFlights[i].departureTime + "</td>";
-        tblStr += "<td>" + allFlights[i].destination.city + ", " + allFlights[i].destination.country + "</td>";
-        tblStr += "<td>" + allFlights[i].pilot + "</td>";
-        tblStr += "<td>" + allFlights[i].coPilot + "</td>";
+        tblStr += "<td>" + dest + "</td>";
+        tblStr += "<td>" + pilotInfo + "</td>";
+        tblStr += "<td>" + coInfo + "</td>";
         tblStr += "</tr>";
     }
                     
